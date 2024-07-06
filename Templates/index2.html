@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NYT Best Sellers - Detailed View</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <h1>New York Times Best Sellers</h1>
+    <div>
+        <!-- also add description and Amazon link -->
+        <select onchange="location = this.value;">
+            <option value="/">Select Genre:</option>
+            <option value="/">All Genres</option>
+            {% for genre in genres %}
+                <option value="/?genre={{ genre }}">{{ genre.replace('-', ' ').title() if genre != None else "" }}</option>
+            {% endfor %}
+        </select>
+    </div>
+    {% for genre, books in best_sellers.items() %}
+        <h2>{{ genre.replace('-', ' ').title() if genre != None else "" }}</h2>
+        <ul>
+            {% for book in books %}
+                <li>
+                    <strong>Title:</strong> {{ book.book_details[0].title }}<br>
+                    <strong>Author:</strong> {{ book.book_details[0].author }}<br>
+                    <!-- also add description and Amazon link -->
+                </li>
+            {% endfor %}
+        </ul>
+    {% endfor %}
+</body>
+</html>
