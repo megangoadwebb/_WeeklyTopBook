@@ -1,13 +1,41 @@
 body {
-    font-family: Arial, sans-serif;
+    font-family: 'Arial', sans-serif;
     margin: 0;
     padding: 0;
     background-color: #f4f4f4;
+    color: #333;
+}
+
+.container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
 h1, h2 {
-    color: #333;
     text-align: center;
+}
+
+form {
+    margin: 20px 0;
+    text-align: center;
+}
+
+select {
+    padding: 10px;
+    font-size: 16px;
+    margin-left: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+}
+
+p {
+    text-align: center;
+    font-size: 16px;
+    color: #666;
 }
 
 ul {
@@ -16,9 +44,13 @@ ul {
 }
 
 li {
-    background-color: #fff;
+    background-color: #f9f9f9;
     margin: 5px 0;
     padding: 10px;
     border: 1px solid #ddd;
     border-radius: 5px;
+}
+
+li:nth-child(even) {
+    background-color: #f1f1f1;
 }
