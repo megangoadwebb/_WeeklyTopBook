@@ -54,3 +54,18 @@ li {
 li:nth-child(even) {
     background-color: #f1f1f1;
 }
+
+h5 {
+    margin: 0;
+    font-size: 18px;
+    color: #333;
+}
+
+a {
+    color: #007bff;
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
