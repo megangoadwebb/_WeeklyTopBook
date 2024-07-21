@@ -29,4 +29,4 @@ def index():
     return render_template('index.html', genres=genres, best_sellers=best_sellers, selected_genre=selected_genre, published_date=published_date)
 
 if __name__ == '__main__':
-    app.run(debug=True) 
+    app.run(debug=True)
