@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NYT Best Sellers</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+</head>
+<body>
+    <div class="container">
+        <h1>New York Times Best Sellers</h1>
+        <form method="POST">
+            <div class="form-group">
+                <label for="genre">Select Genre:</label>
+                <select class="form-control" name="genre" id="genre" onchange="this.form.submit()">
+                    {% for genre in genres %}
+                        <option value="{{ genre }}" {% if genre == selected_genre %}selected{% endif %}>
+                            {{ genre.replace('-', ' ').title() }}
+                        </option>
+                    {% endfor %}
+                </select>
+            </div>
+        </form>
+        <p>Published Date: {{ published_date }}</p>
+        <h2>{{ selected_genre.replace('-', ' ').title() }}</h2>
+        <ul class="list-group">
+            {% for book in best_sellers %}
+                <li class="list-group-item">
+                    <h5>{{ book.book_details[0].title }} by {{ book.book_details[0].author }}</h5>
+                    <p>{{ book.book_details[0].description }}</p>
+                    <a href="https://www.amazon.com/s?k={{ book.book_details[0].title | urlencode }}+{{ book.book_details[0].author | urlencode }}" target="_blank">Buy on Amazon</a>
+                </li>
+            {% endfor %}
+        </ul>
+    </div>
+</body>
+</html>
