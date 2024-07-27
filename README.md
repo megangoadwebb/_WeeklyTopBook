@@ -1,6 +1,6 @@
 User’s Guide:
 
-Welcome to the NYT Best Sellers Project! This guide will help you set up and run the project to display the New York Times Best Sellers list by genre.
+Welcome to the Weekly Top Books app! This guide will help you set up and run the project to display the New York Times Best Sellers list by genre.
 
 
 Prerequisites
