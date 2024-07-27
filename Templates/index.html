@@ -26,7 +26,11 @@
         <h2>{{ selected_genre.replace('-', ' ').title() }}</h2>
         <ul class="list-group">
             {% for book in best_sellers %}
-                <li class="list-group-item">{{ book.book_details[0].title }} by {{ book.book_details[0].author }}</li>
+                <li class="list-group-item">
+                    <h5>{{ book.book_details[0].title }} by {{ book.book_details[0].author }}</h5>
+                    <p>{{ book.book_details[0].description }}</p>
+                    <a href="https://www.amazon.com/s?k={{ book.book_details[0].title | urlencode }}+{{ book.book_details[0].author | urlencode }}" target="_blank">Buy on Amazon</a>
+                </li>
             {% endfor %}
         </ul>
     </div>
