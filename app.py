@@ -1,10 +1,8 @@
 from flask import Flask, render_template, request
 import requests
+from API_keys import NYT_API_KEY, NYT_API_URL
 
 app = Flask(__name__)
-
-NYT_API_KEY = 'z2DLoXq6jaHXlyNO6UaXxY27tTQ2Bwak'
-NYT_API_URL = 'https://api.nytimes.com/svc/books/v3/lists.json'
 
 def get_best_sellers_list(list_name):
     params = {
